@@ -1,4 +1,4 @@
-local M = {}
+local M ={}
 M.disabled ={
   n={
     -- new
@@ -6,15 +6,18 @@ M.disabled ={
     ["<leader>v"] = "",
     ["<C-x>"] = { "<cmd> :qa! <CR>", "Quit all" },
   },
-  -- i={
-    --new
-    -- ["<C-s>"] = { "<ESC><cmd> w <CR>", "Save file" },
-    -- ["<C-s>"] = { "<ESC>^i", "Beginning of line" },
-    -- ["<C-s>"] = { "<cmd> w <CR>", "Save file" },
-    -- ["<C-s>"] = { "<cmd> noh <CR>", "Clear highlights" },
-  -- },
 }
-
+M.general = {
+ n={
+    [","] = {
+      function ()
+        local current_window = vim.fn.win_getid()
+        require('leap').leap { target_windows = { current_window } }
+      end,
+      "Easy Jump key",
+    },
+  },
+}
 M.terminal ={
   n={
     -- new

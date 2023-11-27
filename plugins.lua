@@ -2,6 +2,9 @@ local cmp = require "cmp"
 local overrides = require("custom.configs.overrides")
 
 local plugins = {
+  {
+    "ggandor/leap.nvim",
+  },
   {--override nvim-tree settings.
     "nvim-tree/nvim-tree.lua",
     opts = overrides.nvimtree,
