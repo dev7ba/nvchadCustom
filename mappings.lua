@@ -16,6 +16,31 @@ M.general = {
       end,
       "Easy Jump key",
     },
+    ["<C-Left>"] = { "<C-w>h", "Window left" },
+    ["<C-Right>"] = { "<C-w>l", "Window right" },
+    ["<C-Down>"] = { "<C-w>j", "Window down" },
+    ["<C-Up>"] = { "<C-w>k", "Window up" },
+    ["<C-k>"] = { "O<Esc>j", "Open line down" },
+    ["<C-j>"] = { "o<Esc>k", "Open line up" },
+    ["<leader>hh"] = { "<cmd> :noh<CR>", "No highlight after searching" },
+    ["<C-PageUp>"] = {
+      function()
+        require("nvchad.tabufline").tabuflineNext()
+      end,
+      "Goto next buffer",
+    },
+    ["<C-PageDown>"] = {
+      function()
+        require("nvchad.tabufline").tabuflinePrev()
+      end,
+      "Goto prev buffer",
+    },
+    ["<F2>"] = {
+      function()
+        require("nvchad.renamer").open()
+      end,
+      "LSP rename",
+    },
   },
 }
 M.terminal ={

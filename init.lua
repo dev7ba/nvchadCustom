@@ -9,3 +9,5 @@ vim.api.nvim_set_keymap('n','<C-x>',":q<CR>:echo 'File exited!'<CR>",{noremap = 
 vim.api.nvim_set_keymap('i','<C-x>',"<esc>:q<CR>:echo 'File exited!'<CR>",{noremap = true,silent = false});
 vim.api.nvim_set_keymap('n','<C-e>',":e!<CR>:echo 'File reloaded!'<CR>",{noremap = true,silent = false});
 -- vim.api.nvim_set_keymap('i','<C-e>',"<esc>:e!<CR>:echo 'File reloaded!'<CR>",{noremap = true,silent = false});--used in nvchad for go to end line while insert mode
+
+vim.api.nvim_set_keymap('i',';;',"<ESC>A;",{noremap = true,silent = false});
