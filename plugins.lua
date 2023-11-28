@@ -5,6 +5,16 @@ local plugins = {
   {
     "ggandor/leap.nvim",
   },
+  {
+    "kylechui/nvim-surround",
+    version = "v2.1.3", -- Use for stability; omit to use `main` branch for the latest features
+    event = "VeryLazy",
+    config = function()
+        require("nvim-surround").setup({
+            -- Configuration here, or leave empty to use defaults
+        })
+    end
+  },
   {--override nvim-tree settings.
     "nvim-tree/nvim-tree.lua",
     opts = overrides.nvimtree,
