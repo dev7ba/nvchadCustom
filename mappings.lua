@@ -4,6 +4,7 @@ M.disabled ={
     -- new
     ["<leader>h"] = "",
     ["<leader>v"] = "",
+    ["<leader>x"] = "",
     ["<C-x>"] = { "<cmd> :qa! <CR>", "Quit all" },
   },
 }
@@ -20,6 +21,10 @@ M.general = {
     ["<C-Right>"] = { "<C-w>l", "Window right" },
     ["<C-Down>"] = { "<C-w>j", "Window down" },
     ["<C-Up>"] = { "<C-w>k", "Window up" },
+    ["<A-Up>"] = { "<cmd> :resize +2<CR>", "Window horizontal resize +"},
+    ["<A-Down>"] = { "<cmd> :resize -2<CR>", "Window horizontal resize -"},
+    ["<A-Right>"] = { "<cmd> :vertical resize +2<CR>", "Window vertical resize +"},
+    ["<A-Left>"] = { "<cmd> :vertical resize -2<CR>", "Window vertical resize -"},
     ["<C-k>"] = { "O<Esc>j", "Open line down" },
     ["<C-j>"] = { "o<Esc>k", "Open line up" },
     ["<leader>hh"] = { "<cmd> :noh<CR>", "No highlight after searching" },
@@ -41,6 +46,18 @@ M.general = {
       end,
       "LSP rename",
     },
+    ["<leader>xx"] = {
+      function()
+        require("nvchad.tabufline").close_buffer()
+      end,
+      "Close buffer",
+    },
+    ["<leader>xm"] = {
+      function ()
+        require("rust-tools").expand_macro.expand_macro()
+      end,
+      "Expand macros",
+    }
   },
 }
 M.terminal ={
