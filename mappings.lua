@@ -59,7 +59,21 @@ M.terminal ={
       end,
       "New vertical term",
     },
-  }
+    ["<A-t>"] = {
+      function()
+        require("nvterm.terminal").toggle "float"
+      end,
+      "Toggle floating term",
+    },
+  },
+  t={
+    ["<A-t>"] = {
+      function()
+        require("nvterm.terminal").toggle "float"
+      end,
+      "Toggle floating term",
+    },
+  },
 }
 
 M.dap = {
