@@ -28,6 +28,7 @@ M.general = {
     ["<C-k>"] = { "O<Esc>j", "Open line down" },
     ["<C-j>"] = { "o<Esc>k", "Open line up" },
     ["<leader>hh"] = { "<cmd> :noh<CR>", "No highlight after searching" },
+    ["<leader>ru"] = { "<cmd> :RustRunnables<CR>", "Rust Runnables" },
     ["<C-PageUp>"] = {
       function()
         require("nvchad.tabufline").tabuflineNext()
