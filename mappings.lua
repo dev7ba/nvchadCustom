@@ -58,7 +58,77 @@ M.general = {
         require("rust-tools").expand_macro.expand_macro()
       end,
       "Expand macros",
-    }
+    },
+    --"Go substitute" AKA substitute motions
+    -- added "g" to all keymaps to not eliminate "s" key function
+    ["gs"] = {
+      function ()
+        require("substitute").operator()
+      end,
+      "Substitute with buffer operator",
+    },
+    ["<leader>gs"] = {
+      function ()
+        require("substitute.range").operator()
+      end,
+      "Substitute with buffer a range",
+    },
+    ["gss"] = {
+      function ()
+        require("substitute").line()
+      end,
+      "Substitute with buffer current line",
+    },
+    ["gsx"] = {
+      function ()
+        require("substitute.exchange").operator()
+      end,
+      "Substitute exchange with buffer operator",
+    },
+    ["gsxx"] = {
+      function ()
+        require("substitute.exchange").line()
+      end,
+      "Substitute exchange with buffer current line",
+    },
+    ["gsxc"] = {
+      function ()
+        require("substitute.exchange").cancel()
+      end,
+      "Substitute exchange with buffer current line",
+    },
+    ["<leader>gss"] = {
+      function ()
+        require("substitute.range").word()
+      end,
+      "Substitute with buffer a line",
+    },
+    ["gS"] = {
+      function ()
+        require("substitute").line()
+      end,
+      "Substitute with buffer end of line",
+    },
+  },
+  x={
+    ["<leader>gs"] = {
+      function ()
+        require("substitute.range").visual()
+      end,
+      "Substitute with buffer visual",
+    },
+    ["gsx"] = {
+      function ()
+        require("substitute").visual()
+      end,
+      "Substitute with buffer visual",
+    },
+    ["gX"] = {
+      function ()
+        require("substitute.exchange").visual()
+      end,
+      "Substitute exchange with buffer visual",
+    },
   },
 }
 M.terminal ={
